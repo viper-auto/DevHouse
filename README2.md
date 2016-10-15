@@ -1,8 +1,11 @@
+Это резултат выполнения тестового задания от DevHouse (см. devhouseNodeJSTest-Assignement.pdf). Выполнено на основе разработки Evgeny Aleksandrov ([@EAleksandrov](http://twitter.com/EAleksandrov))  (см. README.md).
+Выполнил Олег Кузьменко(viper-auto@yandex.ru).
+
 ----------------------------------------------------
 Обязательно
 ----------------------------------------------------
 
-1. Установить Node.js and MongoDB;
+1. Установить Node.js, MongoDB;
 2. Установить зависимости из каталога проекта: 
 		npm install
 3. Установить "httpie" (см "https://httpie.org/#installation")
@@ -75,7 +78,7 @@ http http://localhost:1337/api/users/outfriends user2fr=[friendId] Authorization
 
 Creating and refreshing access tokens:
 
-D:\FREELANCE\node.js\NodeAPI-master>http POST http://localhost:1337/api/oauth/token grant_type=password client_id=android client_secret=SomeRandomCharsAndNumbers username=myapi password=abc1234
+>http POST http://localhost:1337/api/oauth/token grant_type=password client_id=android client_secret=SomeRandomCharsAndNumbers username=myapi password=abc1234
 HTTP/1.1 200 OK
 Cache-Control: no-store
 Connection: keep-alive
@@ -95,7 +98,7 @@ X-Powered-By: Express
 
 ---------------------------------------------
 Refreshing access tokens:
-D:\FREELANCE\node.js\NodeAPI-master>http POST http://localhost:1337/api/oauth/token grant_type=refresh_token client_id=android client_secret=SomeRandomCharsAndNumbers refresh_token=898cc36ded37ea13ce543de8df5c7e91c1ac92c513ab222c27dcd995e4ef457b
+>http POST http://localhost:1337/api/oauth/token grant_type=refresh_token client_id=android client_secret=SomeRandomCharsAndNumbers refresh_token=898cc36ded37ea13ce543de8df5c7e91c1ac92c513ab222c27dcd995e4ef457b
 HTTP/1.1 200 OK
 Cache-Control: no-store
 Connection: keep-alive
@@ -117,7 +120,7 @@ X-Powered-By: Express
 
 Getting your data:
 
-D:\FREELANCE\node.js\NodeAPI-master>http http://localhost:1337/api/users/info Authorization:"Bearer e9c4ac01973ed22bee1c306eec81224208143284ad2cd465bf29b7aa259199b8"
+>http http://localhost:1337/api/users/info Authorization:"Bearer e9c4ac01973ed22bee1c306eec81224208143284ad2cd465bf29b7aa259199b8"
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Length: 65
@@ -135,7 +138,7 @@ X-Powered-By: Express
 ---------------------------------------------
 new user:
 
-D:\FREELANCE\node.js\NodeAPI-master>http http://localhost:1337/api/users/register @newuser.json
+>http http://localhost:1337/api/users/register @newuser.json
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
 Connection: keep-alive
@@ -165,7 +168,7 @@ X-Powered-By: Express
 ---------------------------------------------
 Все друзья заданного пользователя:
 
-D:\FREELANCE\node.js\NodeAPI-master>http  http://localhost:1337/api/users/friends/57f6479fcb106e01ecd2ab58 Authorization:"Bearer 4811f0cd14db25a20c8c887d9457e148b51aaa639cd7296a485f910d9e929d68"
+>http  http://localhost:1337/api/users/friends/57f6479fcb106e01ecd2ab58 Authorization:"Bearer 4811f0cd14db25a20c8c887d9457e148b51aaa639cd7296a485f910d9e929d68"
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
 Connection: keep-alive
@@ -195,7 +198,7 @@ X-Powered-By: Express
 ---------------------------------------------
 Удаление токенов текущего пользователя:
 
-D:\FREELANCE\node.js\NodeAPI-master>http http://localhost:1337/api/users/delltokens Authorization:"Bearer c387f6751affb840b0232f431915333e0a1658c4d726f3936317a95fbb27a67c"
+>http http://localhost:1337/api/users/delltokens Authorization:"Bearer c387f6751affb840b0232f431915333e0a1658c4d726f3936317a95fbb27a67c"
 HTTP/1.1 200 OK
 Access-Control-Allow-Origin: *
 Connection: keep-alive
